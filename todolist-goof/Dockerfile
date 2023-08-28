@@ -1,4 +1,5 @@
 FROM maven:3-jdk-8-slim as build
+LABEL org.opencontainers.image.source=https://dev.azure.com/stephenperciballi/Development/_git/node-goof
 
 RUN mkdir /usr/src/goof
 WORKDIR /usr/src/goof

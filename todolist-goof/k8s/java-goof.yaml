@@ -3,21 +3,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: goof
-  name: goof
-  namespace: default
+    app: java-goof
+  name: java-goof
+  namespace: java-goof
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: goof
+      app: java-goof
   template:
     metadata:
       labels:
-        app: goof
+        app: java-goof
     spec:
       containers:
-      - image: ${DOCKER_ACCOUNT}/java-goof:latest
+      - image: northamerica-northeast2-docker.pkg.dev/snyk-cx-se-demo/sperciballi-registry/java-goof:gke
         imagePullPolicy: Always
         name: java-goof
       restartPolicy: Always
@@ -26,8 +26,8 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: goof
-  name: goof
+    app: java-goof
+  name: java-goof
 spec:
   type: LoadBalancer
   ports:
@@ -35,4 +35,4 @@ spec:
       protocol: TCP
       targetPort: 8080
   selector:
-    app: goof
+    app: java-goof

@@ -1,8 +1,8 @@
 version: "2"
 services:
   javagoof:
-    build: .
-    image: javagoof:orig
+#    build: .
+    image: northamerica-northeast2-docker.pkg.dev/snyk-cx-se-demo/sperciballi-registry/java-goof
     container_name: javagoof
     environment:
       - DOCKER=1
